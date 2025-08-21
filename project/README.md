@@ -20,3 +20,11 @@
 - Goal: Evaluate whether to increase or reduce Tesla position
 - Stage: Problem Framing & Scoping (Stage 01)
 - Deliverable mapping: Scoping paragraph
+
+### Data Storage
+- data/raw/ stores first-hand data which is original and unprocessed, while data/processed/ stores data that is processed in the notebook script and outputted.
+- data/raw/ stores mostly csv documents because it is downloaded from other sources, while data/processed stores parquet documents because we can read parquet faster and keep it more compressed.
+- "os.getenv('DATA_DIR_RAW', 'data/raw')" Here, we are using the function os.getenv(). This command says if we have the value for 'DATA_DIR_RAW' in the .env, then we use this value; otherwise, we use the default value 'data/raw'.
+
+### Cleaning Strategy
+- I first keep the rows that have at least 4 non-null values out of 6. Otherwise, I think that person did not report seriously, so I remove its data. Then, I filled out the nulls at age, income, score and extra_data by using the column-median because I believe they all obey the normal distribution.
