@@ -1,0 +1,1 @@
+The chose audience is the portfolio manager because they require this concise but data-backed analysis of stocks to decide whether to invest them or not.
